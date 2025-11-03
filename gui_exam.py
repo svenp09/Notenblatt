@@ -10,15 +10,18 @@ class exam:
         self.top.grab_set()
         self.examData = examData
 
-        self.showData()
+        self.showTable()
 
 
-    def showData(self):
-        # TODO: Add names
-        tree = ttk.Treeview(self.top, columns=list(self.examData.columns), show="headings")
+    def showTable(self):
+        # Create a new list of columns that includes the index as the first column
+        columns = ["Name"] + list(self.examData.columns)
+
+        tree = ttk.Treeview(self.top, columns=columns, show="headings")
         for col in self.examData.columns:
             tree.heading(col, text=col)
             tree.column(col, width=100)
-        for _, row in self.examData.iterrows():
-            tree.insert("", tk.END, values=list(row))
+        for index, row in self.examData.iterrows():
+            tree.insert("", tk.END, values=[index]+list(row))
         tree.pack(side=tk.LEFT, fill=tk.X)
+
