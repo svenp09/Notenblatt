@@ -78,6 +78,6 @@ class MainApp:
         messagebox.showinfo("Saved", "Data saved to data.csv")
 
     def read_data(self):
-        data =load_data()
-        exam(self.root, data)
+        data, meta =load_data()
+        exam(self.root, data, meta)
 
