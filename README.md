@@ -10,7 +10,7 @@
 <h3 align="center">Notenblatt</h3>
 
   <p align="center">
-    My Linux configuration.
+    
     <br />
     <a href="https://github.com/svenp09/Notenblatt"><strong>Explore the docs »</strong></a>
     <br />
