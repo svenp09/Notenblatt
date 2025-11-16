@@ -2,12 +2,12 @@ import pandas as pd
 from tkinter import ttk, messagebox, filedialog
 
 def load_data():
-    # file_path = filedialog.askopenfilename(
-    #     title="Select a data file",
-    #     filetypes=[("Excel files", "*.xlsx"), ("CSV files", "*.csv"),  ("All files", "*.*")]
-    #     )
+    file_path = filedialog.askopenfilename(
+        title="Select a data file",
+        filetypes=[("Excel files", "*.xlsx"), ("CSV files", "*.csv"),  ("All files", "*.*")]
+        )
 
-    file_path = "./Test/testdata.xlsx"
+    #file_path = "./Test/testdata.xlsx"
     if not file_path:
         return
 
