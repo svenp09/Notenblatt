@@ -1,0 +1,1 @@
+& 'C:\Program Files\Python314\python.exe' -m  PyInstaller -F -n "Proben Auswerter" --hidden-import openpyxl main.py
