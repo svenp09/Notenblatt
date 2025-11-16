@@ -35,17 +35,31 @@ tbd
 </details>
 
 ## Prerequisites
+If you are not using the build executable follwing python dependencies exist
+- numpy 
+- pandas
+- matplotlib
+- openpyxl
+- tkinter
 
 ## Installation
+
+### For Users
+The build executable is located in `dist`.
+
+### For Developers
+
 
 ## Usage
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] 
-- [ ] 
-- [ ] 
+- [ ] Tidy up start screen
+- [ ] Add loading screen
+- [ ] Generate Template for Proben
+- [ ] Add view for each Child individually
+- [ ] ...
     
 
 See the [open issues](https://github.com/svenp09/Notenblatt/issues) for a full list of proposed features (and known issues).
