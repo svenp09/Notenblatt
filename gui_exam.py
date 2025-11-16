@@ -1,11 +1,12 @@
 import tkinter as tk
 from tkinter import ttk
+import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class exam:
-    def __init__(self, parent,examData, metaData):
+    def __init__(self, parent,examData, metaData:pd.DataFrame):
         self.top = tk.Toplevel(parent)
         self.top.title("Probe")
         self.top.geometry("1600x600")
@@ -63,7 +64,7 @@ class exam:
     def showNumericalData(self):
         
         tree = tk.Label(self.top,
-                 text= f"Notenschnitt: {self.metaData["mean"]:.2f}",
+                 text= f"Notenschnitt: {self.metaData['mean']:.2f}",
                  font=("Helvetica", 20),
                  )
         tree.grid(row = 0, column= 0 )
