@@ -6,7 +6,7 @@ import numpy as np
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 class exam:
-    def __init__(self, parent,examData, metaData:pd.DataFrame):
+    def __init__(self, parent,examData,examDataNonNumeric, metaData:pd.DataFrame):
         self.top = tk.Toplevel(parent)
         self.top.title("Probe")
         self.top.geometry("1600x600")
@@ -14,6 +14,7 @@ class exam:
         self.top.grab_set()
         self.examData = examData
         self.metaData = metaData
+        self.examDataNonNumeric = examDataNonNumeric
 
         # Count number of tasks from examData columns 
         self.nTasks = len(self.examData.columns) - 3
@@ -55,6 +56,8 @@ class exam:
         for col in self.examData.columns:
             tree.heading(col, text=col)
             tree.column(col, width=100)
+        # Insert non-numeric row if exists
+        tree.insert("", tk.END, values=["NamAufgabenKategorie"]+list(self.examDataNonNumeric.iloc[0])) 
         for index, row in self.examData.iterrows():
             tree.insert("", tk.END, values=[index]+list(row))
         tree.grid(row=0, column=0, sticky="nsew")
