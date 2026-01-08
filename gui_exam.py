@@ -56,8 +56,9 @@ class exam:
         for col in self.examData.columns:
             tree.heading(col, text=col)
             tree.column(col, width=100)
-        # Insert non-numeric row if exists
-        tree.insert("", tk.END, values=["NamAufgabenKategorie"]+list(self.examDataNonNumeric.iloc[0])) 
+        # Insert non-numeric row if dataframe is not empty
+        if  self.examDataNonNumeric.empty == False:
+            tree.insert("", tk.END, values=["NamAufgabenKategorie"]+list(self.examDataNonNumeric.iloc[0])) 
         for index, row in self.examData.iterrows():
             tree.insert("", tk.END, values=[index]+list(row))
         tree.grid(row=0, column=0, sticky="nsew")

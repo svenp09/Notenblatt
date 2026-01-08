@@ -29,7 +29,8 @@ def load_data():
     if "Kategorie" in df.index:
         df_non_numeric = df.iloc[0:1]   
         df = df.iloc[1:]  # Exclude non-numeric rows
-
+    else:
+        df_non_numeric = pd.DataFrame()
     
     metadata = {}
     df["Gesamt Punkte"] = df.sum(axis=1)
